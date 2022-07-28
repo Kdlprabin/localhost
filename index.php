@@ -1,3 +1,6 @@
 <?php
-echo "namaste nepal";
+
+echo "error";
+
+
 ?>
