@@ -6,14 +6,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Form</title>
         <style>
+            *{
+                text-transform: capitalize;
+            }
             form{
                 margin: 10px 40px;
             }
             #submit{
                     margin: 10px 0px;
-            }
-            #nav{
-                color: white;
             }
         </style>
         <link
@@ -23,7 +23,7 @@
             crossorigin="anonymous">
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg bg-primary">
+        <nav class="navbar navbar-expand-lg bg-light">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#"  id="nav">Login Page</a>
                 <button class="navbar-toggler" type="button"
@@ -86,7 +86,7 @@
             <div class="form-group">
                 <label for="inputAddress">Address</label>
                 <input type="text" class="form-control" id="inputAddress"
-                    placeholder="1234 Main St" name="address">
+                    placeholder="Main address" name="address">
             </div>
             <div class="form-group">
                 <label for="inputAddress2">Address 2</label>

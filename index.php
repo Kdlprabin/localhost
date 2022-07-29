@@ -7,9 +7,10 @@ $address2 = $_POST['address2'];
 $city = $_POST['city'];
 $state = $_POST['state'];
 
-$conn = new mysqli('localhost','root','','form','3307');
-
 $sql= "INSERT INTO form(email,password,address,address2,state,city) VALUES('$email','$password','$address','$address2','$state','$city');";
+$check = "SELECT * FROM form where email = $email";
+
+$conn = new mysqli('localhost','root','','form','3307');
 
 $result = mysqli_query($conn,$sql);
 
@@ -31,8 +32,33 @@ else{
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>back</title>
+    <style>
+        body{
+            font-size: 48px;
+            text-align: center;
+        }
+        button{
+            padding: 10px;
+            font-size: 24px;
+            border-radius: 10px;
+            color: white;
+            margin:40px;
+            background-color: blue;
+            cursor: pointer;
+        }
+        button:hover{
+            color:blue;
+            background-color: white;
+        }
+    </style>
 </head>
 <body>
-    <button id="back" style="background-color:blue;"><a href="index.html" style="color: white;text-decoration:none;">Back</a></button>
+    <br>
+    <button id="back" onclick="back();">Back</button>
+    <script>
+        function back(){
+            location.replace("index.html");
+        }
+    </script>
 </body>
 </html>
