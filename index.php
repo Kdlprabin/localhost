@@ -1,5 +1,5 @@
 <?php
-echo "connection success";
+
 $email = $_POST['email'];
 $password=md5($_POST['password']);
 $address = $_POST['address'];
@@ -17,11 +17,22 @@ if($conn->connect_error){
     die("Connection Failed");
 }
 else{
-    echo "Connection Sucessful\n";
     if($result){
-        echo "\nSignUp sucessful";
+        echo "\nSignup sucessful";
     }else{
-        echo "SignUp Failed";
+        echo "Signup Failed";
     }
 }
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>back</title>
+</head>
+<body>
+    <button id="back" style="background-color:blue;"><a href="index.html" style="color: white;text-decoration:none;">Back</a></button>
+</body>
+</html>
