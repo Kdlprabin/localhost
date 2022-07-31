@@ -58,6 +58,7 @@ else{
     <script>
         function back(){
             location.replace("index.html");
+            var 
         }
     </script>
 </body>
