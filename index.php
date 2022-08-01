@@ -1,5 +1,4 @@
 <?php
-
 $email = $_POST['email'];
 $password=md5($_POST['password']);
 $address = $_POST['address'];
@@ -8,22 +7,25 @@ $city = $_POST['city'];
 $state = $_POST['state'];
 
 $sql= "INSERT INTO form(email,password,address,address2,state,city) VALUES('$email','$password','$address','$address2','$state','$city');";
-$check = "SELECT * FROM form where email = $email";
+$check = "SELECT city FROM form where email = prabinkandelking@gmail.com";
 
 $conn = new mysqli('localhost','root','','form','3307');
 
-$result = mysqli_query($conn,$sql);
+$receive =mysqli_query($conn,$check);
+
+$send = mysqli_query($conn,$sql);
 
 if($conn->connect_error){
     die("Connection Failed");
 }
 else{
-    if($result){
+    if($send){
         echo "\nSignup sucessful";
     }else{
         echo "Signup Failed";
     }
 }
+mysqli_close($conn);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -58,7 +60,6 @@ else{
     <script>
         function back(){
             location.replace("index.html");
-            var 
         }
     </script>
 </body>
